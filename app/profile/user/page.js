@@ -21,6 +21,8 @@ export default function UserPage() {
       name={userName}
       des="Welcome to user's Personalised Profile"
       data={posts}
+      handleEdit={false}
+      handleDelete={false}
     />
   );
 }
