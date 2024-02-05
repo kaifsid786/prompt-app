@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Profile from "@components/Profile";
 import { useSearchParams } from "next/navigation";
 export default function UserPage() {
@@ -17,12 +17,14 @@ export default function UserPage() {
     fetchPosts();
   }, []);
   return (
-    <Profile
-      name={userName}
-      des="Welcome to user's Personalised Profile"
-      data={posts}
-      handleEdit={false}
-      handleDelete={false}
-    />
+    <Suspense>
+      <Profile
+        name={userName}
+        des="Welcome to user's Personalised Profile"
+        data={posts}
+        handleEdit={false}
+        handleDelete={false}
+      />
+    </Suspense>
   );
 }
