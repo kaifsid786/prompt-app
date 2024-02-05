@@ -17,14 +17,12 @@ export default function UserPage() {
     fetchPosts();
   }, []);
   return (
-    <Suspense>
-      <Profile
-        name={userName}
-        des="Welcome to user's Personalised Profile"
-        data={posts}
-        handleEdit={false}
-        handleDelete={false}
-      />
-    </Suspense>
+    <Profile
+      name={userName}
+      des="Welcome to user's Personalised Profile"
+      data={posts}
+      handleEdit={false}
+      handleDelete={false}
+    />
   );
 }
